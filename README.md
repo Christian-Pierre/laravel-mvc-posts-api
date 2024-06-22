@@ -2,6 +2,14 @@
 ### About
 This project is a demonstration of a CRUD through a laravel API with docker, using Mysql PHP 8 database and can be used as mvc, since the front can be delivered through the blades that communicate with the project's API.
 
+### Tecnologies
+
+- Docker
+- PHP 8.1
+- Laravel 10
+- Mysql
+
+
 ## Run 
 
 Initialize the containers Initialize the containers
