@@ -1,3 +1,30 @@
+# POSTS PROJECT
+### About
+This project is a demonstration of a CRUD through a laravel API with docker, using Mysql PHP 8 database and can be used as mvc, since the front can be delivered through the blades that communicate with the project's API.
+
+## Run 
+
+Initialize the containers Initialize the containers
+```bash
+docker-compose up -d
+```
+If necessary, access the container
+```bash
+docker-compose exec laravel bash
+```
+Install dependencies (in laravel bash)
+```bash
+composer install
+```
+Run Migrations (in laravel bash)
+```bash
+php artisan migrate
+```
+
+### Swagger Documentation
+
+into: http://localhost:8000/api/documentation#/Posts
+
 ## About Laravel
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
