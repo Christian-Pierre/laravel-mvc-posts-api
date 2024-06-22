@@ -1,0 +1,147 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API de Posts",
+        "description": "API para gerenciar posts",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Listar todos os posts",
+                "operationId": "3fda362e2e082b5357ac416e7767e435",
+                "responses": {
+                    "200": {
+                        "description": "Lista de posts"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Criar um novo post",
+                "operationId": "dcb66200c3132996151884ac232cf439",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Título do post"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Conteúdo do post"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Post criado"
+                    }
+                }
+            }
+        },
+        "/api/posts/{post}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Obter um post específico",
+                "operationId": "5042caf9a6c47bde39921c8f400e28b5",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Detalhes do post"
+                    },
+                    "404": {
+                        "description": "Post não encontrado"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Atualizar um post",
+                "operationId": "fc17b67462ad71a7f4b287520462fd02",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Título atualizado"
+                                    },
+                                    "content": {
+                                        "type": "string",
+                                        "example": "Conteúdo atualizado"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Post atualizado"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Excluir um post",
+                "operationId": "f0dcb391948b9589ee732a26a68e17c7",
+                "parameters": [
+                    {
+                        "name": "post",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Post excluído"
+                    }
+                }
+            }
+        }
+    }
+}
